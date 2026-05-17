@@ -1,0 +1,21 @@
+### Workspace
+# Create project folder (option)
+- mkdir NextJS/samawa
+- cd NextJS/samawa
+
+# Install NextJS 14.2.5
+- npx create-next-app@14.2.5 . --typescript --eslint
+# Or (option)
+- npx create-next-app@lates app-name --typescript --eslint
+# Modify tsconfig.json add "target": "es2023"
+# Create .nvmrc file
+# Create .env file
+# Modify tailwind.config.ts
+# Modify src/app/globals.css
+# Modify src/app/layout.tsx
+# Modify src/app/page.tsx
+# Create folders inside src like assets, components, libs
+# Install svgr/webpack
+- npm i -D @svgr/webpack
+# Modify next.config.mjs
+# Create svgo.config.js file
