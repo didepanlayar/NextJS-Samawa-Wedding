@@ -19,3 +19,6 @@
 - npm i -D @svgr/webpack
 # Modify next.config.mjs
 # Create svgo.config.js file
+
+# Install Swiper
+- npm i swiper
