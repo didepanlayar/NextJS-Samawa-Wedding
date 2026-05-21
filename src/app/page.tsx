@@ -3,12 +3,17 @@ import WeddingPackages from "@/components/WeddingPackages";
 import ThumbsUp from "@/assets/images/thumbsup.svg";
 import CreditCard from "@/assets/images/credit-card.svg";
 import Hometown from "@/assets/images/hometown-feature.svg";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-y-16">
       <Header />
-      <WeddingPackages show="popular" type="slider" />
+
+      <section className="">
+        <WeddingPackages show="popular" type="slider" />
+      </section>
+
       <section className="container mx-auto flex flex-col">
         <h2 className="text-3xl font-bold max-w-md mx-auto text-center mb-8">Alasan Mereka Memilih Wedding Package Samawa</h2>
         <div className="grid grid-cols-3 gap-10">
@@ -44,6 +49,14 @@ export default function Home() {
             <a href="#" className="text-color2 hover:underline">Learn More</a>
           </div>
         </div>
+      </section>
+
+      <section className="container mx-auto flex flex-col">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold max-w-sm">Our Latest & Best Wedding Packages</h2>
+          <Link href="/packages" className="border border-dark1 px-5 py-3 text-center rounded-full font-semibold">Explore All</Link>
+        </div>
+        <WeddingPackages show="newest" type="grid" />
       </section>
     </main>
   );
