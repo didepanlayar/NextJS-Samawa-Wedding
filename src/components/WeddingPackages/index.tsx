@@ -20,7 +20,7 @@ function WeddingPackageGrid({ data }: { data: TPackage[] }) {
       {
         data.map((grid) => {
           return (
-            <div className="flex flex-col gap-y-4 relative">
+            <div className="flex flex-col gap-y-4 relative" key={grid.id}>
               <Link href={`${process.env.HOST_APP}/packages/${grid.slug}`} className="absolute inset-0 z-10"></Link>
               <span className="relative h-[300px] rounded-3xl overflow-hidden">
                 {grid.is_popular === 1 && (
