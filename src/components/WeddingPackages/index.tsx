@@ -14,7 +14,7 @@ type PropsWeddingPackagesWrapper = {
   type: "grid" | "slider";
 };
 
-function WeddingPackageGrid({ data }: { data: TPackage[] }) {
+export function WeddingPackageGrid({ data }: { data: TPackage[] }) {
   return (
     <div className="grid grid-cols-4 gap-7">
       {
@@ -39,10 +39,6 @@ function WeddingPackageGrid({ data }: { data: TPackage[] }) {
                   <Pinpoint />
                   {grid.city.name}
                 </span>
-                <span className="flex gap-x-2 items-center">
-                  <Hometown />
-                  {grid.wedding_organizer.name}
-                </span>
               </span>
               <span className="text-color2 font-bold">Rp {thousands(grid.price)}</span>
             </div>
@@ -53,7 +49,7 @@ function WeddingPackageGrid({ data }: { data: TPackage[] }) {
   );
 }
 
-function WeddingPackageSlider({ data }: { data: TPackage[] }) {
+export function WeddingPackageSlider({ data }: { data: TPackage[] }) {
   return (
     <div className="relative">
       <Slider swiperClassName="w-full h-[480px]" swiperSliderClassName="-mx-10 px-12 xl:max-w-5xl 2xl:max-w-7xl">
@@ -79,10 +75,6 @@ function WeddingPackageSlider({ data }: { data: TPackage[] }) {
                     <span className="flex gap-x-2 items-center">
                       <Pinpoint />
                       {slide.city.name}
-                    </span>
-                    <span className="flex gap-x-2 items-center">
-                      <Hometown />
-                      {slide.wedding_organizer.name}
                     </span>
                   </span>
                   <Link href={`${process.env.HOST_APP}/packages/${slide.slug}`} className="flex justify-center bg-color2 py-2 w-full text-light1 rounded-full">View Package</Link>

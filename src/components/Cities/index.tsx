@@ -21,7 +21,7 @@ function Content({ data }: { data: TCity[] }) {
                 <span className="text-xl font-bold">{city.name}</span>
                 <span className="">{thousands(city.wedding_package_count)} Package{city.wedding_package_count > 1 && "s"}</span>
               </span>
-              <Link href={`${process.env.HOST_APP}/cities/${city.slug}`} className="absolute inset-0"></Link>
+              <Link href={`/cities/${city.slug}`} className="absolute inset-0"></Link>
             </div>
           )
         })
