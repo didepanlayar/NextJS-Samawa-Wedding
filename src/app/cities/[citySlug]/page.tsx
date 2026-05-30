@@ -45,12 +45,11 @@ export async function generateMetadata(
 
 async function DetailsCityPage({ params }: Request) {
   const { data: city }: { data: TCity } = await getData(params.citySlug)
-  console.log(city)
   return (
     <main className="flex flex-col gap-y-16">
       <Header />
 
-      <section className="flex flex-col">
+      <section className="flex flex-col -mt-8">
         <div className="container mx-auto flex justify-between items-center mb-8">
           <span className="flex max-w-sm">
             <h2 className="text-4xl font-bold">Wedding Packages in {city.name} City</h2>
