@@ -7,6 +7,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 import thousands from '@/libs/thousands';
 import Link from 'next/link';
 import { Content as Testimonials } from '@/components/Testimonials';
+import { Content as Bonus } from '@/components/BonusPackages';
 import { TPackage } from '@/components/WeddingPackages/types';
 import Slides from './Slides';
 
@@ -80,6 +81,14 @@ async function DetailsPackagePage({ params }: Request) {
             <div className="flex flex-col">
               <h6 className="font-bold text-xl">It's a Good Package</h6>
               <p className="leading-normal">{wedding.about}</p>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <h6 className="font-bold text-xl">Bonus Included</h6>
+              {
+                wedding.wedding_bonus_packages.map(bonus => {
+                  return <Bonus data={bonus.bonus_package} key={bonus.id} />
+                })
+              }
             </div>
             <div className="flex flex-col gap-y-4">
               <div className="flex justify-between items-center">

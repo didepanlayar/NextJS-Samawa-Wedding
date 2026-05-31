@@ -49,7 +49,6 @@ function Slides({ data, title, isPopular }: Props) {
             </span>
           </span>
 
-          <img src="/images/image 2.png" alt="wedding 2" className="w-full h-full object-cover absolute" />
           <Image fill className="w-full h-full object-cover absolute" src={`${process.env.NEXT_PUBLIC_HOST_API}/storage/${currentPhoto?.photo}`} alt={`${title}-0`} sizes="(max-width: 768px) 100vw" />
         </span>
       </div>
