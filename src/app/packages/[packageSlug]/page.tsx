@@ -5,10 +5,10 @@ import Pinpoint from '@/assets/images/pinpoint.svg';
 import CheckmarkCircle from '@/assets/images/checkmark-circle.svg';
 import { Metadata, ResolvingMetadata } from 'next';
 import thousands from '@/libs/thousands';
-import { WeddingPackageGrid, WeddingPackageSlider } from '@/components/WeddingPackages';
 import Link from 'next/link';
 import { Content as Testimonials } from '@/components/Testimonials';
 import { TPackage } from '@/components/WeddingPackages/types';
+import Slides from './Slides';
 
 type Request = {
   params: {
@@ -71,6 +71,7 @@ async function DetailsPackagePage({ params }: Request) {
             <span className="font-bold">({thousands(wedding.wedding_testimonials.length)})</span>
           </span>
         </div>
+        <Slides data={wedding.photos} title={wedding.name} isPopular={wedding.is_popular === 1} />
       </section>
 
       <section className="container mx-auto">
