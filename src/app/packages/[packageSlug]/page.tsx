@@ -86,7 +86,7 @@ async function DetailsPackagePage({ params }: Request) {
               <h6 className="font-bold text-xl">Bonus Included</h6>
               {
                 wedding.wedding_bonus_packages.map(bonus => {
-                  return <Bonus data={bonus.bonus_package} key={bonus.id} />
+                  return <Bonus data={bonus.bonus_package} slugPackage={wedding.slug} key={bonus.id} />
                 })
               }
             </div>
