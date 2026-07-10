@@ -8,6 +8,7 @@ import thousands from '@/libs/thousands';
 import Link from 'next/link';
 import { Content as Testimonials } from '@/components/Testimonials';
 import { Content as Bonus } from '@/components/BonusPackages';
+import { Content as WeddingOrganizers } from '@/components/WeddingOrganizers';
 import { TPackage } from '@/components/WeddingPackages/types';
 import Slides from './Slides';
 
@@ -125,6 +126,7 @@ async function DetailsPackagePage({ params }: Request) {
                 </ul>
                 <hr />
                 <h6 className="font-bold">Wedding Organizer</h6>
+                <WeddingOrganizers data={wedding.wedding_organizer} />
                 <hr />
                 <Link href={`/package/${wedding.slug}/checkout`} className="flex justify-center bg-color2 py-4 w-full text-light1 rounded-full">Choose This Package</Link>
               </div>
