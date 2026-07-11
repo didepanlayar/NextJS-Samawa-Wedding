@@ -11,25 +11,13 @@ import { Content as Bonus } from '@/components/BonusPackages';
 import { Content as WeddingOrganizers } from '@/components/WeddingOrganizers';
 import { TPackage } from '@/components/WeddingPackages/types';
 import Slides from './Slides';
+import { getData } from './actions';
 
 type Request = {
   params: {
     packageSlug: string,
   }
 };
-
-async function getData(slug: string) {
-  try {
-    const req = await fetch(`${process.env.HOST_API}/api/wedding-package/${slug}`, {
-      method: "GET",
-      cache: "no-cache",
-    })
-
-    return req.json();
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 export async function generateMetadata(
   { params }: Request,
@@ -128,7 +116,7 @@ async function DetailsPackagePage({ params }: Request) {
                 <h6 className="font-bold">Wedding Organizer</h6>
                 <WeddingOrganizers data={wedding.wedding_organizer} />
                 <hr />
-                <Link href={`/package/${wedding.slug}/checkout`} className="flex justify-center bg-color2 py-4 w-full text-light1 rounded-full">Choose This Package</Link>
+                <Link href={`/packages/${wedding.slug}/checkout`} className="flex justify-center bg-color2 py-4 w-full text-light1 rounded-full">Choose This Package</Link>
               </div>
             </div>
           </div>
